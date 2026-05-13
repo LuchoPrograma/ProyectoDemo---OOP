@@ -1,7 +1,6 @@
 package com.example.proyectoDemo.services;
 
 import com.example.proyectoDemo.entities.Base;
-import jakarta.transaction.Transactional;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
