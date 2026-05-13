@@ -1,12 +1,17 @@
 package com.example.proyectoDemo.services;
 
 import com.example.proyectoDemo.entities.Base;
+import jakarta.transaction.Transactional;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 
 import java.io.Serializable;
 import java.util.List;
 
 public interface BaseService<E extends Base, ID extends Serializable> {
     public List<E> findAll() throws Exception;
+
+    public Page<E> findAll(Pageable pageable) throws Exception;
 
     public E findById(ID id) throws Exception;
 
