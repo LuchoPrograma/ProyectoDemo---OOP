@@ -14,33 +14,20 @@ public class PersonaServiceImpl extends BaseServiceImpl<Persona, Long> implement
     @Autowired
     private PersonaRepository personaRepository;
 
-    public PersonaServiceImpl(BaseRepository<Persona, Long> baseRepository, PersonaRepository personaRepository) {
+    public PersonaServiceImpl(BaseRepository<Persona, Long> baseRepository) {
         super(baseRepository);
-        this.personaRepository = personaRepository;
     }
 
-    @Override
-    public List<Persona> findAll() throws Exception {
-        return List.of();
-    }
 
     @Override
-    public Persona findById(Long aLong) throws Exception {
-        return null;
-    }
-
-    @Override
-    public Persona save(Persona entity) throws Exception {
-        return null;
-    }
-
-    @Override
-    public Persona update(Long aLong, Persona entity) throws Exception {
-        return null;
-    }
-
-    @Override
-    public boolean delete(Long aLong) throws Exception {
-        return false;
+    public List<Persona> search(String filtro) throws Exception {
+        try{
+            //List<Persona> personas = personaRepository.findByNombreContainingOrApellidoContaining(filtro, filtro);
+            //List<Persona> personas = personaRepository.search(filtro);
+            List<Persona> personas = personaRepository.searchNativo(filtro);
+            return personas;
+        }catch(Exception e){
+            throw new Exception(e.getMessage());
+        }
     }
 }

@@ -2,6 +2,8 @@ package com.example.proyectoDemo.services;
 
 import com.example.proyectoDemo.entities.Persona;
 
-public interface PersonaService extends BaseService<Persona, Long > {
+import java.util.List;
 
+public interface PersonaService extends BaseService<Persona, Long > {
+    List<Persona> search(String filtro) throws Exception;
 }
