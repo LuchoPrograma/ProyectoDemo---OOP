@@ -10,19 +10,13 @@ import lombok.Setter;
 import org.hibernate.envers.Audited;
 
 @Entity
-@Table(name = "autor")
-@Getter
-@Setter
+@Table(name="localidad")
 @NoArgsConstructor
 @AllArgsConstructor
+@Getter
+@Setter
 @Audited
-public class Autor extends Base{
-    @Column(name = "nombre")
-    private String nombre;
-    @Column(name = "apellido")
-    private String apellido;
-    @Column(name = "biografia", length = 1500)
-    private String biografia;
-
-
+public class Localidad extends Base{
+    @Column(name="denominacion")
+    private String denominacion;
 }
